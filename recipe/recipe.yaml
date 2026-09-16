@@ -1,5 +1,5 @@
 context:
-  version: "2.0.0"
+  version: "2.0.1"
 
 package:
   name: hk
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jdx/hk/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: d3ca1da0433f866df7150837f7abdb7642351459a7a4acd25a1f14839ee9cd92
+  sha256: 4832be0f1e0d87984bb9a650d7a33124863ae857960f305fdbeb18050a10f20c
 
 build:
   number: 0
