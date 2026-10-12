@@ -20,7 +20,7 @@ build:
         then:
           - export OPENSSL_DIR=${PREFIX}
           - export OPENSSL_NO_VENDOR=1
-          - export CFLAGS="${CFLAGS} -O0"
+          - export CFLAGS_x86_64_unknown_linux_gnu="${CFLAGS} -O0"
           - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path .
         else:
           - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path .
