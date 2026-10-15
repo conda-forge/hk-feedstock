@@ -1,5 +1,5 @@
 context:
-  version: "2.5.0"
+  version: "2.6.0"
 
 package:
   name: hk
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jdx/hk/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 7361e4428acc923a19d82c84a48c840f9ac1eff75afc1752b4ca41f24b8bf99e
+  sha256: 7de101a93eea599fd9738c50dfe0defe7dc80f7bc88d40a858332fd7e21132b0
 
 build:
   number: 0
@@ -20,6 +20,9 @@ build:
         then:
           - export OPENSSL_DIR=${PREFIX}
           - export OPENSSL_NO_VENDOR=1
+          - export CFLAGS_aarch64_apple_darwin="${CFLAGS} -O0"
+          - export CFLAGS_x86_64_apple_darwin="${CFLAGS} -O0"
+          - export CFLAGS_x86_64_unknown_linux_gnu="${CFLAGS} -O0"
           - cargo auditable install --locked --no-track --bins --root ${{ PREFIX }} --path .
         else:
           - cargo auditable install --locked --no-track --bins --root %LIBRARY_PREFIX% --path .
