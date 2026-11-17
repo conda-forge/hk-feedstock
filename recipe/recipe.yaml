@@ -1,5 +1,5 @@
 context:
-  version: "2.12.0"
+  version: "2.13.0"
 
 package:
   name: hk
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/jdx/hk/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 01ccb16fdad42bde16bd36e21538d7ef72e0030d671f9d4929672b7ed6fd3e18
+  sha256: 211b1d7c0953c192ca3771af34b0061487314c22bf8e883c807a92c1b5f5ac6b
 
 build:
-  number: 1
+  number: 0
   script:
     env:
       CARGO_PROFILE_RELEASE_STRIP: symbols
